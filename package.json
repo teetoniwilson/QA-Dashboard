@@ -1,0 +1,22 @@
+{
+  "name": "SB-QA-Dashboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cat-me": "^1.0.3",
+    "express": "^4.17.1",
+    "knock-knock-jokes": "^1.7.0",
+    "mongoose": "^5.7.12",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "locus": "^2.0.0"
+  }
+}

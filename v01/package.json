@@ -1,0 +1,19 @@
+{
+  "name": "v1",
+  "version": "1.0.0",
+  "description": "QA dashboard v1",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Antonio",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^2.7.3",
+    "express": "^4.17.1",
+    "javascript-time-ago": "^2.0.4",
+    "moment": "^2.24.0",
+    "nodemon": "^1.19.4"
+  }
+}

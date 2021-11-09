@@ -1,0 +1,61 @@
+<% include partials/header %>
+<div class="container ">
+	<h1>Outstanding Issues log!</h1>
+	<header>
+		<div class="jumbotron">
+			  <h1 class="display-4">Quality Assurance!</h1>
+			  <p class="lead">pretty sure Value is supposed to identify what type of Reward not the actual Value set for the Reward.</p>
+			  <hr class="my-4">
+			  <p> Monitoring the software engineering processes and methods used to ensure proper quality. This is accomplished by many and varied approaches..</p>
+			  <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+		 </div>
+	</header>
+
+	<a href="issuelog/new">Add a new Issue</a>
+
+	<div class = "container row">		
+			<% issueLog.forEach(function(issue){ %>
+			<div class="col-md-3 col-sm-6">
+				<div class="card text-white <% if(issue.severity=="High"){ %>
+											   bg-danger 
+											<% } %>
+											<% if(issue.severity=="Medium"){ %>
+											   bg-warning
+											<% } %>
+											<% if(issue.severity=="Low"){ %>
+											   bg-success 
+											<% } %> mb-3 float-right mx-auto" style="max-width: 18rem;" <%if(issue.comment){ %>
+						 data-toggle="tooltip" data-placement="bottom" title="<%= issue.comment %>"
+						 <%};%>>
+					
+					<!-- card-header next -->
+					<div class="card-header"><h4><%=issue.section %> <span class="badge badge-light float-right" >S<%=issue.sprint %></span></h4>
+						<p>
+							<small class="text-white-50 float-right"><%=issue.severity %></small>							
+						</p>
+					
+					</div>
+					<div class="progress">
+					  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+					</div>
+                	<!-- card-body next -->
+					 <div class="card-body">    
+					   <p class="card-text"><H6>
+						 
+						 <%=issue.title %></H6></p>
+					   <a href="<%=issue.issueUrl %>" target="_blank" class="btn btn-primary"><%=issue.issueId %></a>
+					 </div>
+					
+					<!-- card-footer next -->
+					<div class="card-footer">
+                      <small class="text-white-50">- <%=issue.author %></small>
+                    </div>
+				</div>				
+			</div>
+		    <% }); %>			
+		</div>		
+	</div>
+</div>
+
+
+<% include partials/footer %>

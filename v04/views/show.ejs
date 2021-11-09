@@ -1,0 +1,19 @@
+<%- include("partials/header") %>
+
+<h1><%=lessonlearnedlog.title %> </h1>	
+
+<p><%=lessonlearnedlog.description %></p>
+
+<img src="<%=lessonlearnedlog.image %>">
+<p>
+	<%= lessonlearnedlog.created.toDateString() %>
+</p>
+<a class="btn btn-primary" href="/lessonslearnedlogs" role="button">Back</a>
+<a class="btn btn-warning" href="/lessonslearnedlogs/<%=lessonlearnedlog._id %>/edit" role="button">edit</a>
+
+<form action="/lessonslearnedlogs/<%=lessonlearnedlog._id%>?_method=DELETE" method="POST">
+	<button type="submit" class="btn btn-danger">Delete</button>
+</form>
+
+
+<%- include("partials/footer") %>

@@ -1,0 +1,93 @@
+<%- include("../partials/header") %>
+<div class="container">
+	
+	<header class="jumbotron jumboLesson">
+		<div class="container">
+		</div>		
+	</header>
+	<p>
+		<a class="btn btn-primary btn-large" href="/lessonlearnedlogs/new" name="addnew">Add New </a>
+	</p>
+	
+	<div class="row">
+		<% lessonslearned.forEach(function(item){ %>
+			<div class="col-md-3 col-sm-6">
+				
+				<div class="card" style="max-width: 18rem:">
+					<img class="card-img-top" src="<%= item.image %>" alt="Card image cap" style = "height : 165px">
+					<div class="card-body">
+						<h5 class="card-title"><%= item.title %></h5>
+						<% if(item.description && item.description.length >51) {%> 
+						<p class="card-text"><%= item.description.substring(0, 50) %>...</p>
+						<%}%>
+						<a href="/lessonlearnedlogs/<%=item._id %>" class="btn btn-primary">More</a>
+					</div>
+				</div>
+			</div>		
+		<% });%>
+	</div>	
+	
+	
+	
+	
+	
+	<div>
+		<nav aria-label="Page navigation">
+			<% if (pages && pages > 0) { %>
+			<ul class="pagination justify-content-center">
+				<% if (current == 1) { %>
+					 <li class="page-item disabled"><a class="page-link">First</a></li>
+				  <% } else { %>
+				<li><a class="page-link" href="/lessonlearnedlogs/index">First</a></li>
+				<% } %>
+
+				<% if (current == 1) { %>
+				<li class="page-item disabled"><a class="page-link">«</a></li>
+				<% } else { %>
+				<li><a class="page-link" href="/lessonlearnedlogs/index?page=<%= Number(current) - 1 %>">«</a></li>
+				<% } %>
+
+				<% var i = (Number(current) > 5 ? Number(current) - 4 : 1) %>
+				<% if (i !== 1) { %>
+				<li class="page-item disabled"><a class="page-link">...</a></li>
+				<% } %>
+				<% for (; i <= (Number(current) + 4) && i <= pages; i++) { %>
+				<% if (i == current) { %>
+				<li class="active"><a class="page-link"><%= i %></a></li>
+				<% } else { %>
+				<li><a class="page-link" href="/lessonlearnedlogs/index?page=<%= i %>"><%= i %></a></li>
+				<% } %>
+				<% if (i == Number(current) + 4 && i < pages) { %>
+				<li class="page-item disabled"><a class="page-link">...</a></li>
+				<% } %>
+				<% } %>
+
+				<% if (current == pages) { %>
+				<li class="page-item disabled"><a class="page-link">»</a></li>
+				<% } else { %>
+				<li><a class="page-link" href="/lessonlearnedlogs/index?page=<%= Number(current) + 1 %>">»</a></li>
+				<% } %>
+
+				<% if (current == pages) { %>
+				<li class="page-item disabled"><a class="page-link">Last</a></li>
+				<% } else { %>
+				<li><a class="page-link" href="/lessonlearnedlogs/index?page=<%= pages %>">Last</a></li>
+				<% } %>
+			</ul>
+			<% } %>
+		</nav>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<%- include("../partials/footer") %>
+</div>
+
+
+
+

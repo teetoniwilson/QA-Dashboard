@@ -1,0 +1,26 @@
+body{
+    background: #fcfffd;
+}
+
+te3xt{
+    font-family: Arial;
+    font-size: 17px;
+    
+    }
+h2, .flow-text{
+    margin: 0 0 10px;
+}
+.modial{
+    max-width: 500px;
+}
+.canvas{
+    margin-top:10px;
+}
+
+.link {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 2px;
+  }
+
+/*----------------------------------------*/

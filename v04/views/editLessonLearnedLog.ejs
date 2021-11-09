@@ -1,0 +1,46 @@
+<%- include("partials/header") %>
+
+<div class="container">
+	<h1>Edit <%=lessonlearnedlog.title%> </h1>
+
+	<form action="/lessonslearnedlogs/<%=lessonlearnedlog._id%>?_method=PUT" method="POST">
+		<div class="form-group row">
+			<div class="col-md-3">
+				 <label for="section">App Section:</label>
+				 <input type="text" class="form-control" name ="lessonlearnedlog[section]"  value ="<%=lessonlearnedlog.section%>">
+			</div>			
+		</div>
+		<div class="form-group row">
+			<div class="col-md-6">	
+				<label for="title">Title:</label>
+			   	<input type="text" class="form-control" name="lessonlearnedlog[title]" value ="<%=lessonlearnedlog.title%>">				
+			</div>			
+		</div>
+		
+		<div class="form-group">
+		 	<label for="description">Description:</label>
+		  	<textarea class="form-control" rows="10" name="lessonlearnedlog[description]" ><%=lessonlearnedlog.description%></textarea>
+		</div>
+		
+		<div class="form-group row">
+			<div class="col-md-12">	
+				<label for="image">Image Url:</label>
+			   	<input type="text" class="form-control" name="lessonlearnedlog[image]" value ="<%=lessonlearnedlog.image%>">				
+			</div>			
+		</div>
+
+		
+		<div class="form-group">
+			<button type="submit" class="btn btn-primary">Submit</button>
+			<a href="/lessonslearnedlogs" class="btn btn-secondary">Cancel</a>
+		</div> 
+
+
+	</form>
+	
+	<%- include("partials/footer") %>	
+</div>
+
+
+
+

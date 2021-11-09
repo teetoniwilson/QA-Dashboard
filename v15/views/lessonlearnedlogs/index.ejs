@@ -1,0 +1,27 @@
+<%- include("../partials/header") %>
+<div class="container">
+	<h1>LESSONS LEARNED LOGS</h1>
+	
+	<div class="row">
+		<% lessonslearned.reverse().forEach(function(item){ %>
+			<div class="col-md-3 col-sm-6">
+				<div class="card" stryle="width: 18rem;">
+					<img class="card-img-top" src="<%= item.image %>" alt="Card image cap">
+					<div class="card-body">
+						<h5 class="card-title"><%= item.title %></h5>
+						<% if(item.description && item.description.length >51) {%> 
+						<p class="card-text"><%= item.description.substring(0, 50) %>...</p>
+						<%}%>
+						<a href="/lessonlearnedlogs/<%=item._id %>" class="btn btn-primary">More</a>
+					</div>
+				</div>
+			</div>		
+		<% });%>
+	</div>	
+	<a href="/lessonlearnedlogs/new">Add New Lesson learned log</a>
+	<%- include("../partials/footer") %>
+</div>
+
+
+
+

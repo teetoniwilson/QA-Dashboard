@@ -1,0 +1,221 @@
+body{
+	background-color: #F7F7F8;
+	margin-top: 5rem;
+}
+
+
+
+.taskCompleted{
+	color :gray;
+	text-decoration : line-through;
+}
+
+.taskTitle{
+	background: #1E90FF;
+	color: white;
+	margin:0;
+	padding :10px 20px;
+	font-size :24px;
+	font-weight:normal;
+}
+.taskUl{
+	list-style : none;
+	margin :0;
+	padding :0;
+}
+
+.taskItem{
+	background:white;
+	height:40px;
+	line-height:40px;
+	color: #666;	
+}
+
+.taskItem:nth-child(2n){
+	background :#f7f7f7;
+}
+
+.deleteTaskItem{
+	background:#FA255D;
+	height:40px;
+	margin-right:20px;
+	text-align:center;
+	color:white;
+	width:0;
+	display:inline-block;
+	transition:0.2s linear;
+	opacity:0;
+}
+
+.taskItem:hover .deleteTaskItem{
+	width:40px;
+	opacity:1.0;
+}
+
+.taskItemInput{
+	font-size :18px;
+	background-color:#f7f7f7;
+	color: #1E90FF;
+	width:100%;
+	padding: 12px 12px 12px 18px;
+	outline:none;
+	border:3px solid rgba(0,0,0,0);
+	
+}
+
+.taskItemInput:focus{
+	background:white;
+	border:2px solid #F7F7F7;
+	outline:none;
+}
+.taskPlus{
+	float:right;
+}
+
+#listContainer{
+	
+	width: 480px;
+	 max-height: 300px;
+	overflow-y: auto;
+	margin: 0 auto;
+	background :#f7f7f7;
+	box-shadow : 0 0 3px rgba(0,0,0,0.1);
+}
+.cardscroll{ 
+ 
+ overflow-y: auto;
+}
+
+.link {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 2px;
+  }
+.colpad{
+	padding :2px;
+}
+
+.chartcards{
+	width: 30rem;
+	height: 25rem;	
+	
+}
+
+.chartcards-severity{
+	width: 25rem;
+	height: 25rem;	
+	
+}
+
+.chartcards-task{
+	width: 35rem;
+	height: 25rem;	
+	
+}
+
+.loginIcon{
+	background-color :#ffc403;
+	border:none;
+}
+
+
+.statusFailed{
+	background-color : #FA255D;	
+}
+
+.statusPassed{
+	background-color : #87e038;	
+}
+
+.addIs3sue{
+	background : red;
+	border-radius: 50%;
+}
+
+.deleteFlex{
+	padding-left: 4px;
+}
+
+.tradmarkText{
+	text-align: center;
+}
+
+
+
+.deleteBtn{
+	 padding-top: 2px;
+	 border-top-width: 0px;
+	 padding-left: 0px;
+}
+
+.sev
+{
+	height:25px;
+	width: 500px;
+	text-align:center;
+	padding-bottom:25px;	
+}
+
+
+
+.jumbotron{
+	background-color: white;
+	
+}
+
+.jumboPageNotFoundText{
+	margin: 25px 50px;
+		
+}
+.jumboPageNotFound{
+	background-image: url("https://i.imgur.com/Dm4D4u8.jpg"); 
+	background-repeat: no-repeat;
+  	background-size: 100% 100%;	
+	height: 100px;
+    width: 150px;
+}
+
+.jumboLesson {
+	background-image: url("https://i.imgur.com/V7DfDRG.png"); 
+	background-repeat: no-repeat;
+  	background-size: 100% 100%;
+	height: 250px;
+		
+}
+
+.jumboIssues{
+	height: 375px;
+	padding-top: 10px;
+	background : #3d6c99;
+}
+
+
+.low{
+	background-color : #3FB0AC;
+}
+.mid{
+	background-color : #F7BB07;
+}
+.high{
+	background-color : #FA255D;
+}
+
+.canvasXXX{
+	padding-top: 20px;
+}
+
+ .tip {
+	padding :10px;
+	background : #333;
+	color :#fff;
+}
+
+
+@media screen and (max-width: 600px) {
+  #chartTask {
+    display: none;
+  }
+}
+
+
+

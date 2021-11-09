@@ -1,0 +1,13 @@
+
+<%- include("partials/header") %>
+<h1>THIS IS HOW WE DO IT!!!!!!</h1>
+		<p>
+			<img src="https://i.ytimg.com/vi/KZGULYQfCFI/hqdefault.jpg">
+		</p>
+		<ul>
+			<% post.forEach(function(post){ %>
+			<li> <%= post.tile %> - <strong><%= post.author %></strong> </li>				
+			<% }); %>
+		</ul>
+	
+<%- include("partials/footer") %>	

@@ -1,0 +1,78 @@
+<% include partials/header %>
+<div class="container">
+	<h1>Create a New Issue</h1>
+    <a href="/issuelog">Go Back</a>
+
+	<form action ="/issuelog" method="POST"> 
+		
+		<div class="form-group row">
+			
+			<div class="col-md-3">
+				<label for="section">App Section</label>
+				<input type="text" class="form-control" placeholder="App Section" name ="section" required>			
+			</div>
+		</div>
+		
+		<div class="form-row">
+			
+			<div class="col-md-6">
+				<label for="title">Issue Title</label>
+				<input type="text" class="form-control" placeholder="Issue Title" name ="title" required>
+			</div>
+			<div class="col-md-6">
+				    <label for="issueUrl">Issue Url</label>
+					<input type="text" class="form-control" placeholder="Issue url" name ="issueUrl" required>
+			</div>
+		</div>
+		
+		<div class="form-group row">
+			<div class="form-group col-md-1">
+			  <label for="sprint">Sprint</label>
+			  <input type="number" min="1" class="form-control" id="sprint" name="sprint" required>
+			</div>
+			<div class="form-group col-md-2">
+				 <label for="severity">Severity</label>
+				 <select id="severity" class="form-control" name="severity">
+					   <option>High</option>
+					   <option>Medium</option>
+					   <option selected>Low</option>
+				 </select>
+		    </div>			
+
+			<div class="form-group col-md-4">
+			  <label for="author">Author</label>
+			  <input type="text" class="form-control" id="author" name="author" required>
+			</div>
+			<div class="form-group col-md-1">
+			  <label for="occurance">Occurance</label>
+			  <input type="number" min="1" class="form-control" id="occurance" name= "occurance" required>
+			</div>
+			
+			<div class="custom-control custom-radio custom-control-inline ">
+			  <input type="radio" id="Fixed" name="fixed" class="custom-control-input">
+			  <label class="custom-control-label" for="Fixed"  style=" top : 40px">Fixed</label>
+			</div>
+			<div class="custom-control custom-radio custom-control-inline">
+			  <input type="radio" id="NotFixed" name="fixed" class="custom-control-input" checked>
+			  <label class="custom-control-label" for="NotFixed" style=" top : 40px">Not Fixed</label>
+			</div>	
+		</div>
+		<div class="form-group row">
+				<label for="comment">Comment</label>
+				<textarea class="form-control" id="comment" rows="3" name="comment"></textarea>
+		</div>	
+	    
+	    
+		<div class="form-group">
+			<button type="submit" class="btn btn-primary">Submit</button>
+			<a href="/issuelog" class="btn btn-secondary">Cancel</a>
+		</div> 
+			
+	</form>
+	
+		
+</div>
+	
+	
+
+<% include partials/footer %>

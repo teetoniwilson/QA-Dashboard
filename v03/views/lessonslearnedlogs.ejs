@@ -1,0 +1,13 @@
+<%- include("partials/header") %>
+
+<h1>THIS IS THE LESSONS LEARNED LOGS</h1>
+
+<ul>
+	<% lessonslearned.forEach(function(item){ %>
+	<li> <%= item.name %> -<%= item.section %> </li>		
+	<% });%>
+</ul>
+
+<a href="/lessonslearnedlogs/new">Add New Lesson learned log</a>
+
+<%- include("partials/footer") %>

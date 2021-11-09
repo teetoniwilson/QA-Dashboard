@@ -1,0 +1,54 @@
+<%- include("partials/header") %>
+
+<div class="container col-md-4">
+	
+
+	
+	
+
+
+<div class="card text-center">
+  <div class="card-header">
+    <h3>Sign Up</h3>
+  </div>
+  <div class="card-body">
+	 <form action="/register" method="POST">
+		<div class="form-group">
+			<label for="firstname1">First Name</label>
+			<input type="text" class="form-control" id="firstname1" name="FirstName" aria-describedby="firstnameHelp" placeholder="First Name" required>	
+		 </div>
+		<div class="form-group">
+			<label for="lastname1">Last Name</label>
+			<input type="text" class="form-control" id="lastname1" name="lastName" aria-describedby="lastNameHelp" placeholder="Last Name" required>	
+		 </div> 
+		<div class="form-group">
+			<label for="exampleInputEmail1">Email address</label>
+			<input type="email" class="form-control" id="exampleInputEmail1" name="username" aria-describedby="emailHelp" placeholder="Enter email" required>	
+		 </div>
+		<div class="form-group">
+			<label for="avartar1">Avatar</label>
+			<input type="text" class="form-control" id="avatar1" name="avatar" aria-describedby="avatarHelp" placeholder="Avatar Url">	
+		 </div>
+		<div class="form-group">
+			<label for="password1">Password</label>
+			<input type="password" class="form-control" id="password1" name="password" placeholder="Password" required>
+		</div>
+		<div class="form-group">
+			<label for="code1">Code</label>
+			<input type="text" class="form-control" id="code1" name="code" aria-describedby="firstnameHelp" placeholder="Code">	
+		 </div>	
+		<div class="form-group">
+			 <button type="submit" class="btn btn-primary">Submit</button>
+			<a href="/" class="btn btn-secondary" role="button" aria-pressed="true">Cancel</a>
+		</div>	
+	</form>
+   
+  </div>
+  <div class="card-footer text-muted">
+  </div>
+</div>
+	
+		<%- include("partials/footer") %>	
+</div>
+	
+	

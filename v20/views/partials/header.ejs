@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	  <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+
+    <title>SB-QA-Dashboard</title>
+  </head>
+  <body>
+	  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light padder">
+		  <a class="navbar-brand" href="/">Home</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+
+		  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+			  <li class="nav-item">
+				<a class="nav-link" href="/issuelogs/index">Issue logs <span class="sr-only">(current)</span></a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="/lessonlearnedlogs/index">Lesson learned logs</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="/count">Count</a>
+			  </li>
+				<li class="nav-item">
+				<a class="nav-link" href="/performance">Performance</a>
+			  </li>			  
+			   <li class="nav-item">
+					<a class="nav-link" href="/tree">Tree</a>
+				</li>
+			</ul>
+			<form class="form-inline my-2 my-lg-0" action="/issuelogs/index" method="GET">
+			  <input class="form-control mr-sm-2" name="search" type="text" placeholder="Search">
+			  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+			</form>
+			  <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+				  <%if(!currentUser){%>
+				  	<li class="nav-item">
+					<a class="nav-link" href="/login">Login</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" href="/register">Sign Up</a>
+				  </li>
+				  <%} else {%>	
+				  <li class="nav-item">
+					<a class="nav-link" href="/users/<%= currentUser._id %>">Signed in as  <%=currentUser.firstName %></a>
+				  </li>	
+				  <li class="nav-item">
+					<a class="nav-link" href="/logout">Logout</a>
+				  </li>	
+				  <%}%>
+			</ul>
+		  </div>
+	</nav>  
+	  
+	  
+	  <div class="container">
+		  <%if(error && error.length>0){%>
+		    <div class="alert alert-danger" role="alert">
+ 		 		<%=error %>
+	       </div>
+		 <% } %>
+			<%if(success && success.length>0){%>
+		      <div class="alert alert-success" role="alert">
+ 		 		<%=success %>
+	        </div>
+		    <% } %>
+	 </div>
+	  
+	  <% if(currentUser && currentUser.isAdmin) { %>
+	  		<h1>You're an Admin</h1>
+			<% }%>
+	  
+	 
+   
+
+ 

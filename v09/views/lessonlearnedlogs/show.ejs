@@ -1,0 +1,44 @@
+<%- include("../partials/header") %>
+<div class="container">
+	
+	<div class="card">
+	  <div class="card-header">
+		<h5><%=lessonlearnedlog.section %></h5>		
+	  </div>
+	  <div class="card-body">
+		<h5 class="card-title"><%=lessonlearnedlog.title %></h5>
+		<img class="img-fluid" src="<%=lessonlearnedlog.image %>">
+		
+		<p><%=lessonlearnedlog.description %></p>		
+		<p><%= lessonlearnedlog.created.toDateString() %></p>
+		  <div class="d-flex justify-content-between" style="width: 11rem;">
+			  <a class="btn btn-primary p-2" href="/lessonlearnedlogs/index" role="button">Back</a>
+			  <a class="btn btn-warning p-2" href="/lessonlearnedlogs/<%=lessonlearnedlog._id %>/edit" role="button">edit</a>
+			  <form action="/lessonlearnedlogs/<%=lessonlearnedlog._id%>?_method=DELETE" method="POST">
+				<button type="submit" class="btn btn-danger p-2">Delete</button>
+			  </form>
+			  
+		  </div>
+		
+
+		
+	  </div>
+	</div>
+	
+	<div class="card">
+	  <ul class="list-group list-group-flush">
+		  <a class="btn btn-secondary" href="/lessonlearnedlogs/<%=lessonlearnedlog._id %>/comments/new" role="button">Add a New Comment</a>
+		   <% lessonlearnedlog.comments.forEach(function(comment){ %>
+					
+					<li class="list-group-item"><strong><%=comment.author.username %></strong><span class="float-right">10 days ago</span> 
+						<p><%= comment.text%></p>
+						
+		            </li>
+			 <%}) %>
+	  </ul>
+	</div>
+
+
+	<%- include("../partials/footer") %>
+</div>
+

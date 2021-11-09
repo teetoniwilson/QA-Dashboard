@@ -1,0 +1,94 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="/treechart/styles.css">
+	
+	
+    <title>App Tree</title>
+</head>
+<body>
+    
+    <div class="pink section">
+        <h2 class="white-text center">App Tree </h2>
+    </div>
+    <div class="grey lighten-3 section grey-text" style="position: relative">
+        <p class="flow-text center">A view of all App Sections </p>
+        <a href="#modal" class="btn-floating btn-large halfway-fab pink modal-trigger">
+            <i class="material-icons">add</i> <!--This is from the google material icon library-->
+        </a>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h4 class="pink-text center">Add new employee</h4>
+            <form>
+                <div class="input-field">
+                    <input type="text" id="name" placeholder="Employee Name">                    
+                </div>
+                <div class="input-field">
+                    <input type="text" id="parent" placeholder="Report to...">                   
+                </div>
+                <div class="input-field">
+                    <input type="text" id="department" placeholder="Department">                   
+                </div>
+                <div class="input-field">                    
+                    <button class="btn pink white-text">Add Employee</button>                  
+                </div>    
+            </form>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="canvas">
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+            <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-analytics.js"></script>
+
+    <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyBRllXPP5KRg_A-Ia5tUIIerJT6BJrxBPc",
+        authDomain: "d3-demo-4477f.firebaseapp.com",
+        databaseURL: "https://d3-demo-4477f.firebaseio.com",
+        projectId: "d3-demo-4477f",
+        storageBucket: "d3-demo-4477f.appspot.com",
+        messagingSenderId: "531479930362",
+        appId: "1:531479930362:web:8619fc8f3b95b2f2e97043",
+        measurementId: "G-GNSVWY76PY"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    const db = firebase.firestore();
+    const settings  = {timestampsInSnapshots: true};
+    db.settings(settings);
+    </script>
+        
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="https://d3js.org/d3.v5.js"></script>
+        <script src="/treechart/index.js"></script>
+        <script src="/treechart/graph.js"></script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<%- include("../partials/header") %>
+
+<div class="container">
+</div>
+
+<!-- Create appsection Modal -->
+<div class="modal fade" id="newAppSectionCaseModal" tabindex="-1" role="dialog" aria-labelledby="appSectionModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <form >
+	  <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="appsectionModalLabel">New App Section</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+	  
+      <div class="modal-body">   	
+			<div class ="form-group row">				
+				<div class="form-group col-md-9">
+						<label for="group">group</label>
+               			<input class="form-control" id="group" rows="2" name="group"></input>       	
+				</div>
+			</div>
+			<div class ="form-group row">				
+				<div class="form-group col-md-9">
+						<label for="name">name</label>
+               			<input class="form-control" id="name" rows="2" name="name"></input>       	
+				</div>
+			</div>
+			<div class ="form-group row">				
+				<div class="form-group col-md-9">
+						<label for="parent">parent</label>
+               			<input class="form-control" id="parent" rows="2" name="parent"></input>       	
+				</div>
+			</div>		  
+      </div>
+		
+      <div class="modal-footer">
+		  <div class="form-group">			  
+			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			<button type="submit" class="btn btn-primary" name="submit" id="submit">Submit</button>
+		</div>
+      </div>
+    </div>
+  </form>
+  </div>
+</div>	
+
+<div class="container">
+	
+	 <div class="pink section">
+        <h2 class="white-text center">App Section </h2>
+    </div>
+    <div class="grey lighten-3 section grey-text" style="position: relative">
+        <p class="flow-text center">A view of all App Sections </p>
+        
+		<%if(currentUser){%>
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newAppSectionCaseModal" name="addNew" id="addNew">
+		  Add New Section
+		</button>
+		<%}%>
+    </div>
+	
+	
+<!--###############################  DELETE SHORTLY  #########################################-->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h4 class="pink-text center">Add new Segment</h4>
+            <form>
+                <div class="input-field">
+                    <input type="text" id="name" placeholder="Segment Name">                    
+                </div>
+                <div class="input-field">
+                    <input type="text" id="parent" placeholder="Parent">                   
+                </div>
+                <div class="input-field">
+                    <input type="text" id="department" placeholder="App Section">                   
+                </div>
+                <div class="input-field">                    
+                    <button class="btn pink white-text">Add Section</button>                  
+                </div>    
+            </form>
+        </div>
+    </div>
+<!--###############################  DELETE SHORTLY  #########################################-->
+
+
+	
+	
+	
+    <div class="container">
+        <div class="canvas">
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+            <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-analytics.js"></script>
+
+    <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyBRllXPP5KRg_A-Ia5tUIIerJT6BJrxBPc",
+        authDomain: "d3-demo-4477f.firebaseapp.com",
+        databaseURL: "https://d3-demo-4477f.firebaseio.com",
+        projectId: "d3-demo-4477f",
+        storageBucket: "d3-demo-4477f.appspot.com",
+        messagingSenderId: "531479930362",
+        appId: "1:531479930362:web:8619fc8f3b95b2f2e97043",
+        measurementId: "G-GNSVWY76PY"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    const db = firebase.firestore();
+	const mongo =<%-JSON.stringify(appsection)%>;
+	
+    const settings  = {timestampsInSnapshots: true};
+    db.settings(settings);
+	
+		
+	
+    </script>
+        
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://d3js.org/d3.v5.js"></script>        
+        <script src="/treechart/graph.js"></script>
+	    <script src="/treechart/index.js"></script>
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+
+	
+<%- include("../partials/footer") %>
+</div>

@@ -1,0 +1,18 @@
+<%- include("partials/header") %>
+<div class="container">
+	<h1>Login</h1>
+
+<form action="/login" method="POST">
+	<input type="email" name="username" placeholder="Email" required>
+	<input type="password" name="password" placeholder="Password" required>
+	<button name="loginBtn">
+		Login
+	</button>
+</form>
+	<a href="/forgot">Forget Password</a>
+
+
+
+<%- include("partials/footer") %>
+	
+</div>

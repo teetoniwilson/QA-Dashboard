@@ -1,0 +1,67 @@
+<%- include("../partials/header") %>
+<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+			<h1>User Profile</h1>
+			<h1><%= user.firstName +" "+  user.lastName%></h1>
+			<div class="thumbnail">
+				<img src= "<%=user.avatar%>" alt="user profile image">
+			</div>
+
+		</div>
+		<div class="col-md-8">
+			<h3><%= user.username %>'s Activities</h3>
+			
+			<ul class="nav nav-tabs" id="myTab" role="tablist">
+			  <li class="nav-item">
+				<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Lesson Learned Logs</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Issue Logs</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Comments</a>
+			  </li>
+			</ul>
+			<div class="tab-content" id="myTabContent">
+			  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+				  <ul>
+						<% lessonlearnedlogs.forEach(function(lessonlearnedlog){%>
+						<li><a href="/lessonlearnedlogs/<%= lessonlearnedlog.id%>"><%=lessonlearnedlog.title%></a></li>					
+						<%});%>
+				  </ul>
+				</div>
+			  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+				  <ul>
+						<% issuelogs.forEach(function(issuelog){%>
+						<li><a href="<%= issuelog.issueUrl%>"target="_blank"><%=issuelog.title%></a></li>					
+						<%});%>
+				  </ul>
+			  </div>
+			  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+				   <ul>
+						<% comments.forEach(function(comment){%>
+						<li><a href="#"><%=comment.text%></a></li>					
+						<%});%>
+				  </ul>
+			  </div>
+			</div>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</div>	
+    </div>
+	<%- include("../partials/footer") %>
+
+</div>
+
+
+
